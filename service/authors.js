@@ -1,6 +1,7 @@
 import fs from 'fs/promises';
+import { writeJsonFile, readJsonFile } from '../utils/json.js';
 
-export default async function getAuthors() {
+export async function getAuthors() {
     try {
         const authors = await fs.readFile("books.json", "utf-8");
         console.log(JSON.parse(authors).authors);
@@ -9,3 +10,57 @@ export default async function getAuthors() {
         console.error(error);
     }
 }
+
+export async function getAuthorById(id) {
+    try {
+        const authors = await getAuthors();
+        return authors.find(author => parseInt(author.id) === parseInt(id));
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+export async function createAuthor(name) {
+    const allData = await readJsonFile('books.json');
+    const author = {
+        id : allData.authors.length + 1,
+        name
+    }
+    if (!name) {
+        throw new Error("Name is required");
+    }
+    allData.authors.push(author);
+    await writeJsonFile('books.json', allData);
+    return author;
+}
+
+export async function updateAuthor(ID, name) {
+    const id = parseInt(ID);
+    const allData = await readJsonFile('books.json');
+    const author = await getAuthorById(id);
+    if (!author) {
+        throw new Error("Author not found")
+    }
+
+    const index = allData.authors.findIndex(author => author.id === parseInt(id));
+    if (index !== -1) {
+        allData.authors[index] = { id, name }
+        await writeJsonFile('books.json', allData);
+        return allData.authors[index];
+    }
+    throw new Error("Author not found in the list");
+}
+
+export async function deleteAuthor(ID) {
+    const id = parseInt(ID);
+    const allData = await readJsonFile("books.json");
+    const author = await getAuthorById(id);
+    if (!author) {
+        throw new Error("Author not found");
+    }
+    const remainingBooks = allData.books.filter(book => book.authorId !== parseInt(id));
+    allData.books = remainingBooks;
+    allData.authors = allData.authors.filter(author => author.id !== parseInt(id));
+    await writeJsonFile("books.json", allData);
+}
+

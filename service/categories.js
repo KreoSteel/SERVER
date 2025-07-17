@@ -9,3 +9,5 @@ export default async function getCategories() {
         console.error(error);
     }
 }
+
+

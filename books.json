@@ -1,17 +1,10 @@
 {
   "books": [
     {
-      "id": 1,
-      "title": "The Great Gatsby",
-      "authorId": 1,
-      "categoryId": 1,
-      "languageId": 1
-    },
-    {
       "id": 2,
-      "title": "1984",
-      "authorId": 2,
-      "categoryId": 2,
+      "title": "Test update",
+      "authorId": 10,
+      "categoryId": 3,
       "languageId": 1
     },
     {
@@ -29,13 +22,6 @@
       "languageId": 2
     },
     {
-      "id": 5,
-      "title": "Crime and Punishment",
-      "authorId": 5,
-      "categoryId": 4,
-      "languageId": 1
-    },
-    {
       "id": 6,
       "title": "Pride and Prejudice",
       "authorId": 6,
@@ -48,13 +34,6 @@
       "authorId": 7,
       "categoryId": 6,
       "languageId": 2
-    },
-    {
-      "id": 8,
-      "title": "War and Peace",
-      "authorId": 5,
-      "categoryId": 4,
-      "languageId": 1
     },
     {
       "id": 9,
@@ -74,20 +53,6 @@
       "id": 11,
       "title": "Madame Bovary",
       "authorId": 10,
-      "categoryId": 5,
-      "languageId": 1
-    },
-    {
-      "id": 12,
-      "title": "The Brothers Karamazov",
-      "authorId": 5,
-      "categoryId": 4,
-      "languageId": 1
-    },
-    {
-      "id": 13,
-      "title": "Anna Karenina",
-      "authorId": 5,
       "categoryId": 5,
       "languageId": 1
     },
@@ -115,8 +80,8 @@
   ],
   "authors": [
     {
-      "id": 1,
-      "name": "F. Scott Fitzgerald"
+      "id": "1",
+      "name": "Roool"
     },
     {
       "id": 2,
@@ -129,10 +94,6 @@
     {
       "id": 4,
       "name": "Gabriel García Márquez"
-    },
-    {
-      "id": 5,
-      "name": "Fyodor Dostoevsky"
     },
     {
       "id": 6,
