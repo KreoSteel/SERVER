@@ -1,171 +1,246 @@
 {
   "books": [
     {
-      "id": 2,
-      "title": "Test update",
-      "authorId": 10,
-      "categoryId": 3,
-      "languageId": 1
-    },
-    {
       "id": 3,
       "title": "To Kill a Mockingbird",
       "authorId": 3,
       "categoryId": 1,
-      "languageId": 1
+      "languageId": 1,
+      "price": 10.99,
+      "description": "A novel about the serious issues of race and class in the Deep South.",
+      "publishedYear": 1960,
+      "pages": 281,
+      "rating": 4.8
     },
     {
       "id": 4,
       "title": "One Hundred Years of Solitude",
       "authorId": 4,
+      "publishedYear": 1967,
       "categoryId": 3,
-      "languageId": 2
+      "languageId": 2,
+      "price": 12.99,
+      "description": "A multi-generational story blending magical realism and Colombian history.",
+      "pages": 417,
+      "rating": 4.7
     },
     {
       "id": 6,
       "title": "Pride and Prejudice",
       "authorId": 6,
       "categoryId": 5,
-      "languageId": 1
+      "languageId": 1,
+      "price": 8.99,
+      "description": "A classic romance novel exploring manners, marriage, and morality in 19th-century England.",
+      "publishedYear": 1813,
+      "pages": 279,
+      "rating": 4.6
     },
     {
       "id": 7,
       "title": "Don Quixote",
       "authorId": 7,
       "categoryId": 6,
-      "languageId": 2
+      "languageId": 2,
+      "price": 11.99,
+      "description": "A satirical novel about a man who becomes a knight-errant in search of adventure.",
+      "publishedYear": 1605,
+      "pages": 863,
+      "rating": 4.5
     },
     {
       "id": 9,
       "title": "Moby Dick",
       "authorId": 8,
       "categoryId": 7,
-      "languageId": 1
+      "languageId": 1,
+      "price": 9.49,
+      "description": "An epic tale of obsession and revenge between a sea captain and a white whale.",
+      "publishedYear": 1851,
+      "pages": 635,
+      "rating": 4.2
     },
     {
       "id": 10,
       "title": "The Odyssey",
       "authorId": 9,
       "categoryId": 8,
-      "languageId": 1
-    },
-    {
-      "id": 11,
-      "title": "Madame Bovary",
-      "authorId": 10,
-      "categoryId": 5,
-      "languageId": 1
-    },
-    {
-      "id": 14,
-      "title": "Ulysses",
-      "authorId": 11,
-      "categoryId": 8,
-      "languageId": 1
+      "languageId": 1,
+      "price": 10.49,
+      "description": "An ancient Greek epic poem about Odysseus's journey home after the Trojan War.",
+      "publishedYear": -800,
+      "pages": 541,
+      "rating": 4.4
     },
     {
       "id": 15,
-      "title": "The Divine Comedy",
-      "authorId": 12,
-      "categoryId": 8,
-      "languageId": 1
+      "title": "Book",
+      "authorId": 4,
+      "categoryId": 5,
+      "languageId": 4,
+      "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit animi vitae aliquid provident, eligendi sit?",
+      "price": "20"
     },
     {
       "id": 16,
-      "title": "Test",
-      "authorId": 1,
-      "categoryId": 1,
-      "languageId": 1
+      "title": "New Book",
+      "authorId": 13,
+      "categoryId": 3,
+      "languageId": 1,
+      "description": "New desc",
+      "price": "300"
     }
   ],
   "authors": [
     {
-      "id": "1",
-      "name": "Roool"
-    },
-    {
       "id": 2,
-      "name": "George Orwell"
+      "name": "George Orwell",
+      "bio": "George Orwell was an English novelist, essayist, journalist and critic, best known for his novels '1984' and 'Animal Farm'.",
+      "birthYear": 1903,
+      "deathYear": 1950,
+      "nationality": "British"
     },
     {
       "id": 3,
-      "name": "Harper Lee"
+      "name": "Harper Lee",
+      "bio": "Harper Lee was an American novelist widely known for 'To Kill a Mockingbird', published in 1960.",
+      "birthYear": 1926,
+      "deathYear": 2016,
+      "nationality": "American"
     },
     {
       "id": 4,
-      "name": "Gabriel García Márquez"
+      "name": "Gabriel García Márquez",
+      "bio": "Gabriel García Márquez was a Colombian novelist, short-story writer, screenwriter and journalist, known for popularizing magical realism.",
+      "birthYear": 1927,
+      "deathYear": 2014,
+      "nationality": "Colombian"
     },
     {
       "id": 6,
-      "name": "Jane Austen"
+      "name": "Jane Austen",
+      "bio": "Jane Austen was an English novelist known primarily for her six major novels, including 'Pride and Prejudice'.",
+      "birthYear": 1775,
+      "deathYear": 1817,
+      "nationality": "British"
     },
     {
       "id": 7,
-      "name": "Miguel de Cervantes"
+      "name": "Miguel de Cervantes",
+      "bio": "Miguel de Cervantes was a Spanish writer widely regarded as the greatest writer in the Spanish language, best known for 'Don Quixote'.",
+      "birthYear": 1547,
+      "deathYear": 1616,
+      "nationality": "Spanish"
     },
     {
       "id": 8,
-      "name": "Herman Melville"
+      "name": "Herman Melville",
+      "bio": "Herman Melville was an American novelist, short story writer, and poet of the American Renaissance period, best known for 'Moby Dick'.",
+      "birthYear": 1819,
+      "deathYear": 1891,
+      "nationality": "American"
     },
     {
       "id": 9,
-      "name": "Homer"
-    },
-    {
-      "id": 10,
-      "name": "Gustave Flaubert"
-    },
-    {
-      "id": 11,
-      "name": "James Joyce"
+      "name": "Homer",
+      "bio": "Homer is the legendary ancient Greek author of the epic poems the Iliad and the Odyssey.",
+      "birthYear": -800,
+      "nationality": "Greek"
     },
     {
       "id": 12,
-      "name": "Dante Alighieri"
+      "name": "Dante Alighieri",
+      "bio": "Dante Alighieri was an Italian poet, writer and philosopher, best known for his epic poem 'The Divine Comedy'.",
+      "birthYear": 1265,
+      "deathYear": 1321,
+      "nationality": "Italian"
+    },
+    {
+      "id": 13,
+      "name": "Test Author",
+      "bio": "New author bio for tests",
+      "birthYear": 85,
+      "deathYear": 140,
+      "nationality": "American"
     }
   ],
   "categories": [
     {
       "id": 1,
-      "name": "American Classic"
+      "name": "American Classic",
+      "description": "Classic literature written by American authors, often reflecting American culture and history."
     },
     {
       "id": 2,
-      "name": "Dystopian"
+      "name": "Dystopian",
+      "description": "A genre of speculative fiction depicting an imagined society characterized by suffering, oppression, or extreme injustice."
     },
     {
       "id": 3,
-      "name": "Magical Realism"
+      "name": "Magical Realism",
+      "description": "A literary genre in which magical elements are blended into a realistic atmosphere."
     },
     {
       "id": 4,
-      "name": "Russian Classic"
+      "name": "Russian Classic",
+      "description": "Classic works of literature from Russian authors, often exploring philosophical and social themes."
     },
     {
       "id": 5,
-      "name": "Romance"
+      "name": "Romance",
+      "description": "A genre centered on romantic love and its complications."
     },
     {
       "id": 6,
-      "name": "Spanish Classic"
+      "name": "Spanish Classic",
+      "description": "Classic literature written by Spanish authors, often reflecting Spanish culture and history."
     },
     {
       "id": 7,
-      "name": "Adventure"
+      "name": "Adventure",
+      "description": "A genre featuring stories of adventure, exploration, and risk."
     },
     {
       "id": 8,
-      "name": "Epic Poetry"
+      "name": "Epic Poetry",
+      "description": "A lengthy narrative poem, often detailing heroic deeds and events significant to a culture or nation."
     }
   ],
   "languages": [
     {
       "id": 1,
-      "name": "English"
+      "name": "English",
+      "nativeName": "English",
+      "isoCode": "en",
+      "region": "Worldwide"
     },
     {
       "id": 2,
-      "name": "Spanish"
+      "name": "Spanish",
+      "nativeName": "Español",
+      "isoCode": "es",
+      "region": "Worldwide, especially Spain and Latin America"
+    },
+    {
+      "id": 3,
+      "name": "French",
+      "nativeName": "Français",
+      "isoCode": "fr",
+      "region": "France, Canada, Africa, and other regions"
+    },
+    {
+      "id": 4,
+      "name": "Italian",
+      "nativeName": "Italiano",
+      "isoCode": "it",
+      "region": "Italy, Switzerland, and other regions"
+    },
+    {
+      "id": 5,
+      "name": "Greek",
+      "nativeName": "Ελληνικά",
+      "isoCode": "el",
+      "region": "Greece, Cyprus"
     }
   ]
 }

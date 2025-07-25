@@ -22,8 +22,8 @@ async function getAuthorByIdHandler(req, res) {
 
 async function createAuthorHandler(req, res) {
     try {
-        const { name } = req.body;
-        const newAuthor = await createAuthor(name);
+        const { name, bio, birthYear, deathYear, nationality } = req.body;
+        const newAuthor = await createAuthor({ name, bio, birthYear, deathYear, nationality });
         res.status(201).json(newAuthor);
     }
     catch (error) {
@@ -34,11 +34,10 @@ async function createAuthorHandler(req, res) {
 async function updateAuthorHandler(req, res) {
     try {
         const { id } = req.params;
-        const { name } = req.body;
-        if (!name) {
-            return res.status(400).json({ message: 'Name is required' });
+        if (Object.keys(req.body).length === 0) {
+            return res.status(400).json({ message: 'At least one field must be provided for update' });
         }
-        const updatedAuthor = await updateAuthor(id, name);
+        const updatedAuthor = await updateAuthor(id, req.body);
         res.json(updatedAuthor);
     } catch (error) {
         res.status(500).json({ message: error.message });

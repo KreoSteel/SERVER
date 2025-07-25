@@ -20,31 +20,39 @@ export async function getAuthorById(id) {
     }
 }
 
-export async function createAuthor(name) {
+export async function createAuthor({ name, bio, birthYear, deathYear, nationality }) {
     const allData = await readJsonFile('books.json');
-    const author = {
-        id : allData.authors.length + 1,
-        name
-    }
     if (!name) {
         throw new Error("Name is required");
     }
+    const maxId = allData.authors.reduce((max, author) => author.id > max ? author.id : max, 0);
+    const author = {
+        id: maxId + 1,
+        name,
+        bio,
+        birthYear,
+        deathYear,
+        nationality
+    };
     allData.authors.push(author);
     await writeJsonFile('books.json', allData);
     return author;
 }
 
-export async function updateAuthor(ID, name) {
+export async function updateAuthor(ID, updateObj) {
     const id = parseInt(ID);
     const allData = await readJsonFile('books.json');
     const author = await getAuthorById(id);
     if (!author) {
-        throw new Error("Author not found")
+        throw new Error("Author not found");
     }
 
     const index = allData.authors.findIndex(author => author.id === parseInt(id));
     if (index !== -1) {
-        allData.authors[index] = { id, name }
+        allData.authors[index] = {
+            ...allData.authors[index],
+            ...Object.fromEntries(Object.entries(updateObj).filter(([_, v]) => v !== undefined))
+        };
         await writeJsonFile('books.json', allData);
         return allData.authors[index];
     }

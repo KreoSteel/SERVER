@@ -63,8 +63,9 @@ export async function createBook(bookData) {
         }
 
         const allData = await readJsonFile('books.json');
+        const maxId = allData.books.reduce((max, book) => book.id > max ? book.id : max, 0);
         const newBook = {
-            id: allData.books.length + 1,
+            id: maxId + 1,
             ...bookData
         };
 
@@ -85,16 +86,15 @@ export async function updateBook(Id, bookData) {
     const categories = await getCategories();
     const languages = await getLanguages();
 
-    if(!authors.some(author => author.id === bookData.authorId)) {
+    if(bookData.authorId && !authors.some(author => author.id === bookData.authorId)) {
         throw new Error('Invalid author ID');
     }
-    if (!categories.some(category => category.id === bookData.categoryId)) {
+    if (bookData.categoryId && !categories.some(category => category.id === bookData.categoryId)) {
         throw new Error('Invalid category ID');
     }
-    if (!languages.some(language => language.id === bookData.languageId)) {
+    if (bookData.languageId && !languages.some(language => language.id === bookData.languageId)) {
         throw new Error('Invalid language ID');
     }
-
 
     if (!book) {
         throw new Error('Book not found');
@@ -102,7 +102,11 @@ export async function updateBook(Id, bookData) {
     const allData = await readJsonFile('books.json');
     const index = allData.books.findIndex(book => book.id === id);
     if (index !== -1) {
-        allData.books[index] = { id, ...bookData };
+        // Merge existing book with new data, only updating provided fields
+        allData.books[index] = {
+            ...allData.books[index],
+            ...bookData
+        };
         await writeJsonFile('books.json', allData);
         return allData.books[index];
     }

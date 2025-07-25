@@ -9,6 +9,7 @@ async function getBooksHandler(req, res) {
     }
 }
 
+
 async function getBookByIdHandler(req, res) {
     try {
         const {id} = req.params;
@@ -24,8 +25,8 @@ async function getBookByIdHandler(req, res) {
 
 async function createBookHandler(req, res) {
     try {
-        const { title, authorId, categoryId, languageId } = req.body;
-        const newBook = await createBook({ title, authorId, categoryId, languageId });
+        const { title, authorId, categoryId, languageId, description, price } = req.body;
+        const newBook = await createBook({ title, authorId, categoryId, languageId, description, price });
         res.status(201).json(newBook);
     } catch (error) {
         res.status(500).json({ message: error.message });
@@ -35,11 +36,11 @@ async function createBookHandler(req, res) {
 async function updateBookHandler(req, res) {
     try {
         const { id } = req.params;
-        const { title, authorId, categoryId, languageId } = req.body;
-        if (!title && !authorId && !categoryId && !languageId) {
+        const { title, authorId, categoryId, languageId, description, price } = req.body;
+        if (!title && !authorId && !categoryId && !languageId && !description && !price) {
             return res.status(400).json({ message: 'At least one field must be provided for update' });
         }
-        const updatedBook = await updateBook(id, { title, authorId, categoryId, languageId });
+        const updatedBook = await updateBook(id, { title, authorId, categoryId, languageId, description, price });
         res.json(updatedBook);
     } catch (error) {
         res.status(500).json({ message: error.message });

@@ -1,5 +1,4 @@
 import express from 'express'
-
 import { getAuthorsHandler, getAuthorByIdHandler, createAuthorHandler, updateAuthorHandler, deleteAuthorHandler } from '../controllers/author.js'
 
 const router = express.Router()
